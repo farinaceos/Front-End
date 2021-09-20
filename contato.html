@@ -7,6 +7,7 @@
     <title>Contato</title>
 </head>
 <link rel="stylesheet" href="assets/css/style.css">
+
 <body>
     <div class="flag">
         <a href="contact.html">
@@ -29,29 +30,31 @@
     </ul>
     <h1 style="text-align: center;"> Minhas Informações de Contato </h1>
     <div class="container mb-50 ml-50">
-        
-        <div>
-    <form>
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome">
-        <br><br>
-        <label for="email">e-mail:</label><br>
-        <input type="email" id="email">
-        <br><br>
-        <label for="assunto">Assunto:</label><br>
-        <textarea name="assunto" id="assunto" cols="60" rows="=5"></textarea>
-        <br><br>
-        <button>Enviar</button>
 
-    </form>
-    </div>
-    <div class="ml-50">
-    <p>Avenida Paulista, 1811</p>
-    <p>São Paulo, SP</p>
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2249883824993!2d-46.660214984453745!3d-23.560361667441683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59dda627a4c1%3A0x5b2894a7ce278306!2sM%C3%A9qui%201000!5e0!3m2!1spt-BR!2sbr!4v1631800013735!5m2!1spt-BR!2sbr"
-        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-       
+        <div>
+            <form>
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" onkeyup="validaNome()">
+                <div id='txtNome'></div>
+                <br>
+                <label for="email">e-mail:</label><br>
+                <input type="email" id="email" onkeyup="validaEmail()">
+                <div id='txtEmail'></div>
+                <br>
+                <label for="assunto">Assunto:</label><br>
+                <textarea name="assunto" id="assunto" cols="60" rows="=5" onkeyup="validaAssunto()"></textarea>
+                <div id='txtAssunto'></div>
+                <br>
+                <button onclick="enviar()">Enviar</button>
+            </form>
+        </div>
+        <div class="ml-50">
+            <p>Avenida Paulista, 1811</p>
+            <p>São Paulo, SP</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2249883824993!2d-46.660214984453745!3d-23.560361667441683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59dda627a4c1%3A0x5b2894a7ce278306!2sM%C3%A9qui%201000!5e0!3m2!1spt-BR!2sbr!4v1631800013735!5m2!1spt-BR!2sbr"
+                width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" onmousemove="mapaZoom()" onmouseout="mapaNormal()" id="mapa"></iframe>
+
         </div>
     </div>
     <hr>
@@ -83,8 +86,11 @@
                 <img src="https://images.emojiterra.com/twitter/v13.0/512px/1f1e7-1f1f7.png" alt="">
             </a>
         </div>
-        
+
     </footer>
+
+    <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
